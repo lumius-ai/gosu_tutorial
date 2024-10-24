@@ -42,6 +42,17 @@ class Player
     @vel_y *= 0.95
   end
 
+  # Return score
+  def score
+    return @score
+  end
+
+  # Collecting stars
+  def collect_stars(stars)
+    # Delete any stars nearby
+    stars.reject! { |star| Gosu.distance(@x, @y, star.x, star.y) < 35 }
+  end
+
   # Draw rot to center image on given coordinates
   def draw
     @image.draw_rot(@x, @y, 1, @angle)
