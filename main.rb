@@ -11,7 +11,12 @@ class Tutorial_Game < Gosu::Window
     super(640, 480)
     self.caption = "Tutorial Game"
     
+    # Background image
     @background_image = Gosu::Image.new("media/space.png")
+
+
+    # font 20 pixels high
+    @font = Gosu::Font.new(20)
 
     # Create a player in the center position
     @player = Player.new()
@@ -50,7 +55,11 @@ class Tutorial_Game < Gosu::Window
   def draw
     @player.draw()
     @background_image.draw(0,0,0)
+    # Drawing each star
     @stars.each{|star| star.draw()}
+
+    # Drawing text
+    @font.draw_text("Score: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, Gosu::Color::YELLOW)
 
   end
 end
