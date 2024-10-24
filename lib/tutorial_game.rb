@@ -7,7 +7,7 @@ class Tutorial_Game < Gosu::Window
     super(640, 480)
     self.caption = "Tutorial Game"
     
-    @background_image = Gosu::Image.new("../media/space.png")
+    @background_image = Gosu::Image.new("media/space.png")
   end
 
   # Game logic, collision testing, etc
